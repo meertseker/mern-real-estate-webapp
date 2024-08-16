@@ -9,17 +9,17 @@ const userSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      required_: false,
+      required: false, // Corrected here
       unique: true
     },
     password: {
       type: String,
-      required_: true,
+      required: true, // Corrected here
     }
   },
-  {timestamps: true}
+  { timestamps: true }
 );
 
-const User = mongoose.model("user".userSchema);
+const User = mongoose.model("user", userSchema); // Corrected here
 
 export default User;
